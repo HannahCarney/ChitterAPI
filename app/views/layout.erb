@@ -25,6 +25,15 @@ image2.src="/background/1.jpg"
 var image3 = new Image()
 image3.src="/background/2.jpg"
 
+var image4 = new Image()
+image4.src="/background/3.jpg"
+
+var image5 = new Image()
+image5.src="/background/4.jpg"
+
+var image6 = new Image()
+image5.src="/background/5.jpg"
+
 </script>
   
 </head>
@@ -118,7 +127,7 @@ image3.src="/background/2.jpg"
     </header>
   <body>
 
-   <img src="/background/0.jpg" name="slide">
+   <img src="/background/0.jpg" name="slide" style='width:100%;height:100%' alt='[]'>
   <script type="text/javascript">
 
   var step=1
@@ -128,7 +137,7 @@ image3.src="/background/2.jpg"
     step++
   else 
     step=1
-    setTimeout("slideit()", 15 * 1000)
+    setTimeout("slideit()", 10 * 1000)
   }
   slideit()
 
