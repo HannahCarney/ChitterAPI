@@ -1,69 +1,55 @@
-Chitter
-=========
-A clone of Twitter ( Weekend  4 Challenge )
+ChitterAPI
+=======
+API Weekend Challenge
+-------
 
-Heroku (live)
+:construction: Under Construction :construction:
 ------
-[Chitter]: http://chitter-chatter.herokuapp.com/
-
-[Chitter]
 
 Objectives of exercise
------
-* Learning Front End Development
- * Html and CSS
-* Using Ruby and Sinatra to deploy a social network site
- * Use postgres to create databases
- * Add databases to Heroku
- * Test-Driven Development
+----
+- Redoing my Chitter in JavaScript and JQuery
+- Learning how to make an API
+- Test-Driven-Development
 
 Technologies used
-----------
-* Ruby
-* Sinatra
-* Cucumber
-* Rspec
-* Postgres
-* Html
-* CSS
-* Sublime Text
-* Git
-* Heroku
+----
+- Javascript
+- jQuery
+- Jasmine
+- Sinatra
+- Ruby
+- Html
+- CSS
+- Git
+- SublimeText
+
 
 Requirements
----------------
-- [x] In order to use chitter as a maker I want to sign up to the service
-- [x] In order to use chitter as a maker I want to log in
-- [x] In order to avoid others using my account as a maker I want to log out
-- [x] In order to let people know what I am doing as a maker I want to post a message (peep) to chitter
-- [x] In order to see what people have to say as a maker I want to see all peeps in chronological order
+----
+- [ ] has a beautiful skin
+- [ ] has an api to collect data
 
 How to clone this repo
 ----
 ```sh
-git clone https://github.com/HannahCarney/Chitter.git
+git clone https://github.com/HannahCarney/ChitterAPI.git
 ```
 
 How to run tests
 ----
 ```sh
-cd Chitter
-rspec
+cd ChitterAPI
+open SpecRunner.html
 ```
 
 How to rackup
 ----
-```
-gem install rack
-```
-
-
 ```sh
-cd Chitter
-rackup -p 2000
+rackup
 ```
+enter localhost:4567 into the browser
 
-Me
-----
+
 I am [Hannah] from the December 2014 cohort of Makers Academy, London!
 [Hannah]:https://github.com/HannahCarney
