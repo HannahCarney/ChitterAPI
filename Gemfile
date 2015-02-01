@@ -17,4 +17,5 @@ source "https://rubygems.org"
   gem 'pony'
   gem 'pg'
   gem 'sass'
+  gem 'json'
   gem 'timecop'
