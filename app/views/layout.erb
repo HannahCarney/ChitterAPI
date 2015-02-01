@@ -32,7 +32,7 @@ var image5 = new Image()
 image5.src="/background/4.jpg"
 
 var image6 = new Image()
-image5.src="/background/5.jpg"
+image6.src="/background/5.jpg"
 
 </script>
   
@@ -41,89 +41,39 @@ image5.src="/background/5.jpg"
   <header>
 
 
-<div class="head-container clearfix" style="visibility: visible;">
-
-    <div class="topbar">
-        <div class="middle container">
-            <div class="navbar-header">
-                <button class="navbar-toggle" data-target=".bs-navbar-collapse" data-toggle="collapse" type="button">
-                    <span class="sr-only">
-
-                        Toggle navigation
-
-                    </span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <nav class="collapse navbar-collapse bs-navbar-collapse " role="navigation">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="/">
-
-
-                                          Home            
-
-                        </a>
+       
+      <nav class="collapse navbar-collapse bs-navbar-collapse " role="navigation" style="padding:.5em">
+                <ul class="nav navbar-nav" style="font-size:1.5em">
+                    <li class="active">
+                        <a href="/"> Home </a>
                     </li>
                     <li>
-                        <a href="/about">
-
-
-                                          About          
-
-                        </a>
+                        <a href="/about"> About </a>
                     </li>
                     <li>
-                        <a href="/contact">
-
-
-                                          Contact            
-
-                        </a>
+                        <a href="/contact"> Contact </a>
+                    </li>
                 </ul>
-            </nav>
-            <div class="login-form" text-align="right">
-                <div>
-                    <form id="login-form" method="post" action="/">
-                        <div class="username-container">
-                            <div class="input-container clearfix">
-                                <label class="hidden placeholder-text">
-
-                                    Email or Username
-
-                                </label>
-                                <input class="input" type="text" placeholder="Email or Username" name="username" data-original-title="" title=""></input>
-                            </div>
-                        </div>
-                        <div class="password-container">
-                            <div class="input-container clearfix">
-                                <label class="hidden placeholder-text">
-
-                                    Password
-
-                                </label>
-                                <input class="input" type="password" placeholder="Password" name="password" data-original-title="" title=""></input>
-                            </div>
-                        </div>
-                        <a id="login-btn" href="javascript:;">
-
-                            Log In 
-
-                            <span class="icon"></span>
-                        </a>
-                    </form>
                 </div>
-                <a id="forgot-btn" href="javascript:;">
+              </div>
+              <div class="navbar-form navbar-right">
+                  <form method="post" action="/">
+                    <label style="padding-right:1em">Sign in:  </label>
+                    <label class="hidden placeholder-text"> Email or Username</label>
+                    <input class="input" type="text" placeholder="Email or Username" name="username" data-original-title="" title=""></input>
+                    <label class="hidden placeholder-text"> Password </label>
+                    <input class="input" type="password" placeholder="Password" name="password" data-original-title="" title=""></input>
 
-
-                              Forgot password?        
-
-                </a>
+                    <a id="login-btn" style="padding:1em" href="javascript:;"> Log In 
+                      <span class="glyphicon glyphicon-lock"></span></a>
+                    <a id="forgot-btn" href="javascript:;"> Forgot password? </a>
+                  </form>
+                </div>   
             </div>
+          </nav>
         </div>
-    </div>
+    
+
     </header>
   <body>
 
