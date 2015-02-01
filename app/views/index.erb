@@ -1,0 +1,26 @@
+<!-- should eventually have profile information here -->
+
+
+<h1>Post a new peep!</h1>
+<section id="new-peep">
+ <form action="/peep/new" method="post">
+  
+   <label for "message"> Your peep: </label><input name="message" type="text">
+   <p></p>
+   <input type="submit" value="Submit">
+
+ </form>
+</section>
+
+<h1> Peep Page </h1>
+<div>
+	<% if @peeps.any? %>
+		   <% @peeps.reverse.each do |peep| %>
+		       
+			   <pre><ul><a href="peep/<%= peep.id %>"><%= peep.username %> posted on <%= peep.peep_timestamp.strftime("%D at %I:%M%p") %>: <%= peep.message %></a></ul></pre>
+		
+		   <% end %>
+	<% else %>
+		  <p> No peeps have been created yet </p>
+	<% end %>
+</div> 

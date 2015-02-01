@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<!DOCTYPE html>
+<% title="Chitter" %>
+<html lang="en">
+<head>
+  <title><%= @title || "Chitter" %></title>
+  <meta charseet="utf-5">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+  <header>
+    <h1><%= title %></h1>
+    <nav class="hoverme">
+      <ul>
+        <li><a href='/' title="Home" class=current?>Home</a></li>
+        <li><a href='/about' title="About" class=current?("/about")>About</a></li>
+        <li><a href='/contact' title="Contact" class=current?("/contact")>Contact</a></li>
+        <li><a href="/users/new">Sign up</a></li>
+        <li><a href="/sessions/new">Sign in</a></li>
+        <li><a href="/sessions/logout" title ="Sign out" type="Sign out">Sign out</a></li>
+      </ul>
+     </nav>
+    </header>
+  <body>
+ <% if flash[:errors] && !flash[:errors].empty? %>
+   <div id="errors">
+      <% flash[:errors].each do |error| %>
+         <%= error %>
+    </div>
+      <% end %>
+    </ul>
+  <% end %>
+  <% if flash[:notice] %>
+    <div id="notice">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+   <%= yield %>
+</body>
+</html>
