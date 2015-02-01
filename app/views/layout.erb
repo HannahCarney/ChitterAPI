@@ -1,27 +1,142 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
 
 <!DOCTYPE html>
 <% title="Chitter" %>
 <html lang="en">
 <head>
   <title><%= @title || "Chitter" %></title>
-  <meta charseet="utf-5">
-  <link rel="stylesheet" href="/css/styles.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap 101 Template</title>
+ 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
+
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+var image1 = new Image()
+image1.src="/background/0.jpg"
+
+var image2 = new Image()
+image2.src="/background/1.jpg"
+
+var image3 = new Image()
+image3.src="/background/2.jpg"
+
+</script>
+  
 </head>
+
   <header>
-    <h1><%= title %></h1>
-    <nav class="hoverme">
-      <ul>
-        <li><a href='/' title="Home" class=current?>Home</a></li>
-        <li><a href='/about' title="About" class=current?("/about")>About</a></li>
-        <li><a href='/contact' title="Contact" class=current?("/contact")>Contact</a></li>
-        <li><a href="/api/users/new">Sign up</a></li>
-        <li><a href="/api/sessions/new">Sign in</a></li>
-        <li><a href="/api/sessions/logout" title ="Sign out" type="Sign out">Sign out</a></li>
-      </ul>
-     </nav>
+
+
+<div class="head-container clearfix" style="visibility: visible;">
+
+    <div class="topbar">
+        <div class="middle container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-target=".bs-navbar-collapse" data-toggle="collapse" type="button">
+                    <span class="sr-only">
+
+                        Toggle navigation
+
+                    </span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse " role="navigation">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/">
+
+
+                                          Home            
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/about">
+
+
+                                          About          
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/contact">
+
+
+                                          Contact            
+
+                        </a>
+                </ul>
+            </nav>
+            <div class="login-form" text-align="right">
+                <div>
+                    <form id="login-form" method="post" action="/">
+                        <div class="username-container">
+                            <div class="input-container clearfix">
+                                <label class="hidden placeholder-text">
+
+                                    Email or Username
+
+                                </label>
+                                <input class="input" type="text" placeholder="Email or Username" name="username" data-original-title="" title=""></input>
+                            </div>
+                        </div>
+                        <div class="password-container">
+                            <div class="input-container clearfix">
+                                <label class="hidden placeholder-text">
+
+                                    Password
+
+                                </label>
+                                <input class="input" type="password" placeholder="Password" name="password" data-original-title="" title=""></input>
+                            </div>
+                        </div>
+                        <a id="login-btn" href="javascript:;">
+
+                            Log In 
+
+                            <span class="icon"></span>
+                        </a>
+                    </form>
+                </div>
+                <a id="forgot-btn" href="javascript:;">
+
+
+                              Forgot password?        
+
+                </a>
+            </div>
+        </div>
+    </div>
     </header>
   <body>
+
+   <img src="/background/0.jpg" name="slide">
+  <script type="text/javascript">
+
+  var step=1
+  function slideit() {
+  document.images.slide.src=eval("image" + step + ".src")
+  if(step<3)
+    step++
+  else 
+    step=1
+    setTimeout("slideit()", 15 * 1000)
+  }
+  slideit()
+
+  </script>
+    
+
+
+
  <% if flash[:errors] && !flash[:errors].empty? %>
    <div id="errors">
       <% flash[:errors].each do |error| %>
@@ -36,5 +151,7 @@
     </div>
   <% end %>
    <%= yield %>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
 </body>
 </html>
