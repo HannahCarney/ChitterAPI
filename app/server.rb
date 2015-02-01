@@ -29,8 +29,8 @@ class ChitterAPI < Sinatra::Base
 
   get '/' do
     @user = User.get(session[:user_id])
-    @peeps = Peep.all.sort{|a,b| a.peep_timestamp <=> b.peep_timestamp }
-    erb :index
+    # @peeps = Peep.all.sort{|a,b| a.peep_timestamp <=> b.peep_timestamp }
+    erb :signup
   end
 
   get '/api' do

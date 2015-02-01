@@ -1,16 +1,20 @@
-<div>
+<div class="container">
 
+<div class="jumbotron" style="width:40em;margin-left:50%;margin-top:17%">
+<div class="input group">
 <h1> Please sign up </h1>
 
 <section id="new-user">
   <form action="/api/users" method="post">
-    <label for "username"> Username: </label><input type="text" name="username">
-    <label for "email"> Email: </label><input type="text" name="email">
-    <label for "password"> Password: </label><input type="password" name="password">
-    <label for "password_confirmation"> Password Confirmation: </label><input type="password" name="password_confirmation">
+    <label for "username"> Username: </label><input class="form-control" type="text" name="username">
+    <label for "email"> Email: </label><input class="form-control" type="text" name="email">
+    <label for "password"> Password: </label><input class="form-control"type="password" name="password">
+    <label for "password_confirmation"> Password Confirmation: </label><input class="form-control" type="password" name="password_confirmation">
     <p></p>
 
-   <input type="submit" name="Sign up" value="Sign up" id="submit">
+   <button type="button" class="btn btn-default btn-lg" type="submit" name="Sign up" value="Sign up" id="submit">Sign up
+   </button>
   </form>
 </section>
+</div>
 </div>

@@ -42,7 +42,7 @@ image6.src="/background/5.jpg"
 
 
        
-      <nav class="collapse navbar-collapse bs-navbar-collapse " role="navigation" style="padding:.5em">
+      <nav class="collapse navbar-collapse bs-navbar-collapse " role="navigation" style="padding:.5em;background-color:white">
                 <ul class="nav navbar-nav" style="font-size:1.5em">
                     <li class="active">
                         <a href="/"> Home </a>
@@ -58,7 +58,6 @@ image6.src="/background/5.jpg"
               </div>
               <div class="navbar-form navbar-right">
                   <form method="post" action="/">
-                    <label style="padding-right:1em">Sign in:  </label>
                     <label class="hidden placeholder-text"> Email or Username</label>
                     <input class="input" type="text" placeholder="Email or Username" name="username" data-original-title="" title=""></input>
                     <label class="hidden placeholder-text"> Password </label>
@@ -66,7 +65,7 @@ image6.src="/background/5.jpg"
 
                     <a id="login-btn" style="padding:1em" href="javascript:;"> Log In 
                       <span class="glyphicon glyphicon-lock"></span></a>
-                    <a id="forgot-btn" href="javascript:;"> Forgot password? </a>
+                    <a id="forgot-btn" href="javascript:;" style="padding:1em"> Forgot password? </a>
                   </form>
                 </div>   
             </div>
@@ -76,8 +75,9 @@ image6.src="/background/5.jpg"
 
     </header>
   <body>
-
-   <img src="/background/0.jpg" name="slide" style='width:100%;height:100%' alt='[]'>
+  <div style='position:absolute;z-index:-100;left:0;top:0;width:100%;height:100%'>
+    <img src="/background/0.jpg" name="slide" style='width:100%;height:100%' alt='[]'>
+  </div>
   <script type="text/javascript">
 
   var step=1
