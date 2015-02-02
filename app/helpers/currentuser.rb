@@ -44,6 +44,11 @@ module CurrentUser
     end
   end
 
+   def json
+    content_type :json
+    JSON.parse(request.body.read, symbolize_names: true)
+  end
+
 
 
 end

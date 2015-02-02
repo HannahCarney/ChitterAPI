@@ -1,5 +1,3 @@
-
-
 require 'sinatra/base'
 require 'rack-flash'
 require 'pony'
@@ -33,16 +31,6 @@ class ChitterAPI < Sinatra::Base
     erb :signup
   end
 
-  get '/api' do
-    "An API 4 u"
-    erb :index
-  end
-
-  get '/about' do
-    @title = "All About this Website"
-    erb :about
-  end
-
   get '/contact' do
     @title = "Contact Chitter"
     erb :contact
@@ -67,7 +55,7 @@ class ChitterAPI < Sinatra::Base
   end
 
   post '/api/users' do
-    data = handle_json
+    data = json
     @user = User.create(:username => data[:username],
                      :email => data[:email],
                      :password => data[:password],
@@ -89,7 +77,7 @@ class ChitterAPI < Sinatra::Base
   end
 
   post '/api/sessions/new' do
-    data = handle_json
+    data = json
     username, password = data[:username], data[:password]
     @user = User.authenticate(username, password)
     if @user
@@ -173,11 +161,6 @@ class ChitterAPI < Sinatra::Base
   not_found do
     puts "not found"
     erb :not_found
-  end
-
-  def handle_json
-    content_type :json
-    JSON.parse(request.body.read, symbolize_names: true)
   end
 
  run! if app_file == $0
