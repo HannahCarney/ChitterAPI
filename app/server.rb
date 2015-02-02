@@ -1,7 +1,7 @@
+
 require 'sinatra/base'
 require 'rack-flash'
 require 'pony'
-require 'json'
 require 'data_mapper'
 require 'dm-core'
 require 'dm-migrations'
@@ -48,18 +48,17 @@ class ChitterAPI < Sinatra::Base
     end
   end
 
-  get '/api/users/new' do
+  get '/users/new' do
     @title = "Create a New User"
     @user = User.new
     erb :signup
   end
 
-  post '/api/users' do
-    data = json
-    @user = User.create(:username => data[:username],
-                     :email => data[:email],
-                     :password => data[:password],
-                     :password_confirmation => data[:password_confirmation])
+  post '/users' do
+    @user = User.create(:username => params[:username],
+                     :email => params[:email],
+                     :password => params[:password],
+                     :password_confirmation => params[:password_confirmation])
     if
       @user.save
       session[:user_id] = @user.id
@@ -71,26 +70,25 @@ class ChitterAPI < Sinatra::Base
     end
   end
 
-  get '/api/sessions/new' do
+  get '/sessions/new' do
     @title = "Sign in"
     erb :signin
   end
 
-  post '/api/sessions/new' do
-    data = json
-    username, password = data[:username], data[:password]
+  post '/sessions' do
+    username, password = params[:username], params[:password]
     @user = User.authenticate(username, password)
     if @user
      session[:user_id] = @user.id
      flash[:notice] = "Welcome back, #{@user.username}"
      redirect ('/')
     else 
-      flash[:errors] = ["Sorry, wrong username or password"]
-      redirect ('/sessions/new')
+      flash[:errors] = ["The username and password you entered did not match our records. Please double-check and try again."]
+      redirect('/sessions/new')
    end
   end
 
-  get '/api/sessions/logout' do
+  get '/sessions/logout' do
     if session[:user_id]
       session[:user_id] = nil
       flash[:notice] = "You are now logged out"
@@ -158,6 +156,7 @@ class ChitterAPI < Sinatra::Base
     end
   end
 
+
   not_found do
     puts "not found"
     erb :not_found
@@ -166,3 +165,4 @@ class ChitterAPI < Sinatra::Base
  run! if app_file == $0
 
 end
+
