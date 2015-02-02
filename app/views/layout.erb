@@ -12,24 +12,23 @@
  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
-
-<script src="js/bootstrap.min.js"></script>
 <script type="text/javascript">
 
 var image1 = new Image()
 image1.src="/background/0.jpg"
 
 var image2 = new Image()
-image2.src="/background/1.jpg"
+image2.src="/background/4.jpg"
 
 var image3 = new Image()
-image3.src="/background/2.jpg"
+image3.src="/background/1.jpg"
 
 var image4 = new Image()
-image4.src="/background/3.jpg"
+image4.src="/background/2.jpg"
 
-var image6 = new Image()
-image6.src="/background/5.jpg"
+var image5 = new Image()
+image5.src="/background/3.jpg"
+
 
 </script>
   
@@ -77,7 +76,7 @@ image6.src="/background/5.jpg"
   var step=1
   function slideit() {
   document.images.slide.src=eval("image" + step + ".src")
-  if(step<3)
+  if(step<5)
     step++
   else 
     step=1
