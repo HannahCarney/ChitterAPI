@@ -90,17 +90,17 @@ image5.src="/background/3.jpg"
 
 
  <% if flash[:errors] && !flash[:errors].empty? %>
-   <div id="errors" style="text-align:center" class="alert alert-danger" role="alert" id="notice">
+      <% flash[:errors][0..1].map do |error| %>
+   <div id="errors" style="text-align:center;margin: 0 auto;padding:1em" class="alert alert-danger" role="alert" id="notice">
      <span class="glyphicon glyphicon-exclamation-sign" area-hidden="true"></span>
-     <span class="sr-only">Error:</span>
-      <% flash[:errors].each do |error| %>
-         <%= error %>
+     <span class="sr-only"></span>
+      <%= error %>  
     </div>
       <% end %>
     </ul>
   <% end %>
   <% if flash[:notice] %>
-    <div class="alert alert-danger" role="alert" id="notice">
+    <div class="alert alert-danger" role="alert" id="notice" style="padding:1em">
       <span class="glyphicon glyphicon-exclamation-sign" area-hidden="true"></span>
       <span class="sr-only">Error:</span>
       <%= flash[:notice] %>

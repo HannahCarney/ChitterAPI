@@ -59,11 +59,10 @@ class ChitterAPI < Sinatra::Base
                      :email => params[:email],
                      :password => params[:password],
                      :password_confirmation => params[:password_confirmation])
-    if
-      @user.save
+    if @user.save  
       session[:user_id] = @user.id
       flash[:notice] = "Welcome to Chitter, #{@user.username}"
-      redirect ('/')
+      redirect ('/sessions/new')
     else
       flash.now[:errors] = @user.errors.full_messages
       erb :signup
